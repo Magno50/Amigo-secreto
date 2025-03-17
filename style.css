@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background: linear-gradient(-45deg, #283add, #e43fdb, #2c830a, #d81111);
+    background-size: 400% 400%;
+    animation: fondoAnimado 10s infinite alternate;
+}
+
+@keyframes fondoAnimado {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Estilo del sobre */
+.envelope-container {
+    margin: 40px auto;
+    width: 150px;
+    height: 120px;
+    position: relative;
+}
+
+.envelope {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #FFD700;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Parte superior del sobre */
+.top-flap {
+    width: 100%;
+    height: 50%;
+    background: #FFA500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: top;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Parte inferior */
+.bottom-flap {
+    width: 100%;
+    height: 50%;
+    background: #FFD700;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Carta dentro del sobre */
+.letter {
+    width: 90%;
+    height: 80%;
+    background: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.6s;
+}
+
+/* Cuando se abre el sobre */
+.envelope.open .top-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+    opacity: 1;
+}
+
+/* Botones */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.button-add { background: #4CAF50; color: white; }
+.button-draw { background: #008CBA; color: white; }
+.button-reset { background: #f44336; color: white; }
+
+button:hover { transform: scale(1.1); }
+
+/* Efecto de máquina de escribir */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+.letter p {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid black;
+    width: 0;
+    animation: typing 2s steps(15, end) forwards;
+}
+
+/* Quitar puntos de la lista */
+.name-list {
+    list-style-type: none; /* Quita los puntos */
+    padding-left: 0; /* Elimina el espacio a la izquierda */
+}
+
+/* Espacio entre los nombres */
+.name-list li {
+    margin: 5px 0;
+}

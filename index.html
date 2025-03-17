@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Secreto - Sobre Animado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-content">
+        <header class="header-banner">
+            <h1 class="main-title">Amigo Secreto 🎁</h1>
+        </header>
+
+        <section class="input-section">
+            <h2 class="section-title">Añade a tus amigos</h2>
+            <div class="input-wrapper">
+                <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
+                <button class="button-add">Añadir</button>
+            </div>
+            <ul id="listaAmigos" class="name-list"></ul>
+            <div class="button-container">
+                <button class="button-draw" onclick="sortearAmigo()">🎲 Sortear amigo</button>
+                <button class="button-reset" onclick="resetearLista()">🔄 Resetear</button>
+            </div>
+        </section>
+
+        <!-- Animación del sobre -->
+        <div class="envelope-container">
+            <div class="envelope">
+                <div class="top-flap"></div>
+                <div class="bottom-flap"></div>
+                <div class="letter">
+                    <p id="resultado"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
